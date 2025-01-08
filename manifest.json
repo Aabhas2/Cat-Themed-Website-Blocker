@@ -6,7 +6,7 @@
     "permissions": [
         "webRequest",
         "webRequestBlocking",
-        "tabs"
+        "storage"
     ],
     "background":{
         "service_worker": "background.js"
@@ -15,7 +15,7 @@
         "default-icon": "icon.png",
         "default-popup": "index.html"
     },
-    "host-permissions": ["*://*/*"],
+    "host-permissions": ["<all_urls>"],
     "incognito": "split"
 
 }
