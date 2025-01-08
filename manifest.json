@@ -12,7 +12,7 @@
         "service_worker": "background.js"
     },
     "browser-action": {
-        "default-icon": "icon.png",
+        "default-icon": "icons8-blocker-65.png",
         "default-popup": "index.html"
     },
     "host-permissions": ["<all_urls>"],
