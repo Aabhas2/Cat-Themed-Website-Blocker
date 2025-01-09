@@ -11,7 +11,7 @@ let blockingEnabled = true;
 addBtn.addEventListener("click", () => {
     const site = siteInput.value.trim();
     if (site) {
-        chrome.runtime.sendMessage({action: "add"}, (response) => {
+        chrome.runtime.sendMessage({action: "add",site}, (response) => {
             if (response.status = "added") {
                 updateBlockedSites();
             }
@@ -24,7 +24,7 @@ addBtn.addEventListener("click", () => {
 toggleBtn.addEventListener('click', () => {
     blockingEnabled = !blockingEnabled;
     toggleBtn.textContent = blockingEnabled ? "Turn Off Blocking" : "Turn On Blocking";
-    chrome.runtime.sendMessage({action: blockingEnabled ? "enable" : "disable"});
+    chrome.runtime.sendMessage({action: blockingEnabled ? "Enable" : "Disable"});
 });
 
 //Set Timer 
@@ -49,7 +49,7 @@ timerBtn.addEventListener('click', () => {
 function updateBlockedSites() {
     chrome.storage.local.get(["blockedSites"],(result) => {
         const sites = result.blockedSites || [];
-        blockedSitesList.innerHTML = sites.map((site) => `<li>${site}</li>`).join("");
+        blockedSites.innerHTML = sites.map((site) => `<li>${site}</li>`).join("");
     });
 }
 

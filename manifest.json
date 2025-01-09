@@ -4,18 +4,18 @@
     "version": "1.0",
     "description": "Extension to block websites",
     "permissions": [
-        "webRequest",
-        "webRequestBlocking",
+        "declarativeNetRequest",
+        "tabs",
         "storage"
     ],
+    "host_permissions": ["<all_urls>"],
     "background":{
         "service_worker": "background.js"
     },
-    "browser-action": {
-        "default-icon": "icons8-blocker-65.png",
-        "default-popup": "index.html"
+    "action": {
+        "default_icon": "icons8-blocker-64.png",
+        "default_popup": "popup.html"
     },
-    "host-permissions": ["<all_urls>"],
     "incognito": "split"
 
 }
