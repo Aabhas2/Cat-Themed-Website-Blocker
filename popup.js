@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const blockSection = document.getElementById("block-section");
     const timerSection = document.getElementById("timer-section");
 
-    if(!blockSection || !timerSection){
+    if (!blockSection || !timerSection) {
         console.error("Error: 'blockSection' or 'timerSection' element not found.");
         return;
     }
@@ -63,6 +63,23 @@ document.addEventListener("DOMContentLoaded", () => {
     function removeSite(site) {
         blockedSites = blockedSites.filter((s) => s !== site);
         chrome.runtime.sendMessage({ action: "remove", site });
+
+        //find rule ID associated with site
+        const ruleID = blockedSites.indexOf(site)+1;
+
+        //remove dynamic rule
+        chrome.declarativeNetRequest.updateDynamicRules(
+            {
+                removeRuleIds: [ruleId], //remove rule for this site
+            },
+            () => {
+                if(chrome.runtime.lastError){
+                    console.error("Error removing rules:",chrome.runtime.lastError.message);
+                }else{
+                    console.log(`Rule for ${site} removed successfully.`);
+                }
+            }
+        );
         updateBlockedSites();
     }
 
@@ -71,6 +88,16 @@ document.addEventListener("DOMContentLoaded", () => {
         blockedSitesList.innerHTML = blockedSites
             .map((site) => `<li>${site} <span onclick="removeSite('${site}')">X</span></li>`)
             .join("");
+
+        blockedSitesList.addEventListener('click', (event) => {
+            if (event.target.tagName === 'SPAN') { // Check if the clicked element is the "X" icon
+                const websiteToRemove = event.target.parentElement.textContent.trim().replace('X', '').trim();
+                blockedSites = blockedSites.filter((site) => site !== websiteToRemove);
+                chrome.storage.local.set({ blockedSites });
+                chrome.runtime.sendMessage({ action: "remove", site: websiteToRemove });
+                event.target.parentElement.remove(); // Remove the list item
+            }
+        });
 
     }
 
@@ -83,45 +110,3 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 
-// //Add websites to block list
-// addBtn.addEventListener("click", () => {
-//     const site = siteInput.value.trim();
-//     if (site) {
-//         chrome.runtime.sendMessage({action: "add",site}, (response) => {
-//             if (response.status = "added") {
-//                 updateBlockedSites();
-//             }
-//         });
-//         siteInput.value = "";
-//     }
-// });
-
-
-// //Set Timer
-// timerBtn.addEventListener('click', () => {
-//     const site = siteInput.value.trim();
-//     const duration = parseInt(timerInput.value,10);
-//     if(site && duration) {
-//         chrome.runtime.sendMessage(
-//             {action: "setTimer",site,duration},
-//             (response) => {
-//                 if(response.status === "timer-set") {
-//                     updateBlockedSites();
-//                 }
-//             }
-//         );
-//         siteInput.value = "";
-//         timerInput.value = "";
-//     }
-// });
-
-// //Update blocked sites list
-// function updateBlockedSites() {
-//     chrome.storage.local.get(["blockedSites"],(result) => {
-//         const sites = result.blockedSites || [];
-//         blockedSites.innerHTML = sites.map((site) => `<li>${site}</li>`).join("");
-//     });
-// }
-
-// //initial list laod
-// updateBlockedSites();
