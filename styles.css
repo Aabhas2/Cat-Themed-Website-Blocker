@@ -1,12 +1,14 @@
-body {
+html, body {
+    width: 400px;
+    height: 600px;
     font-family: Arial, Helvetica, sans-serif;
     margin: 10px;
     padding: 0;
 }
-h1,h2 {
+h1, h2 {
     color: #4caf50;
 }
-button{
+button {
     background-color: #4caf50;
     color: white;
     border: none;
@@ -17,19 +19,46 @@ button{
 button:hover {
     background-color: #45a049;
 }
-input{
+input, textarea {
     padding: 8px;
     margin: 5px 0;
     border: 1px solid #ddd;
     border-radius: 4px;
+    width: 100%;
+}
+textarea {
+    height: 100px;
+    resize: none;
+}
+.navbar {
+    display: flex;
+    margin-bottom: 10px;
+}
+.navbar button {
+    flex: 1;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.navbar .active {
+    background-color: #4caf50;
+    color: white;
 }
 ul {
     list-style-type: none;
     padding: 0;
 }
-li{
+li {
     background: #f4f4f9;
     padding: 5px;
     margin: 5px 0;
     border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+li span {
+    cursor: pointer;
+    color: red;
+    font-weight: bold;
 }
