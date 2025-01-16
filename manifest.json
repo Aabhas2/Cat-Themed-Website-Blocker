@@ -1,5 +1,5 @@
 {
-    "manifest_version":3,
+    "manifest_version": 3,
     "name": "Website-BLocker-Extension",
     "version": "1.0",
     "description": "Extension to block websites",
@@ -8,14 +8,18 @@
         "tabs",
         "storage"
     ],
-    "host_permissions": ["*://*/*" ],
-    "background":{
+    "host_permissions": [
+        "*://*/*"
+    ],
+    "background": {
         "service_worker": "background.js"
     },
     "action": {
         "default_icon": "icons8-blocker-64.png",
         "default_popup": "popup.html"
     },
+    "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self';"
+    },
     "incognito": "split"
-
 }

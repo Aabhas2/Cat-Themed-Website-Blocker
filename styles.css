@@ -19,30 +19,12 @@ button {
 button:hover {
     background-color: #45a049;
 }
-input, textarea {
+input {
     padding: 8px;
     margin: 5px 0;
     border: 1px solid #ddd;
     border-radius: 4px;
     width: 100%;
-}
-textarea {
-    height: 100px;
-    resize: none;
-}
-.navbar {
-    display: flex;
-    margin-bottom: 10px;
-}
-.navbar button {
-    flex: 1;
-    padding: 10px;
-    cursor: pointer;
-    font-weight: bold;
-}
-.navbar .active {
-    background-color: #4caf50;
-    color: white;
 }
 ul {
     list-style-type: none;
