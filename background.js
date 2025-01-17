@@ -72,7 +72,12 @@ function updateBlockedRules() {
   const newRules = blockedSites.map((site,index) => ({
     id: index+1, //unique ID
     priority: 1,
-    action: {type: "block"},
+    action: {
+      type: "redirect",
+      redirect: {
+        url: `${chrome.runtime.getURL("blocked.html")}?site=${encodeURIComponent(site)}`, //Append site as query param
+      },
+    },
     condition: {
       urlFilter: `*://*${site}/*`,
       resourceTypes: ["main_frame"],
