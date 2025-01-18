@@ -1,8 +1,13 @@
 {
     "manifest_version": 3,
-    "name": "Website-BLocker-Extension",
+    "name": "MeowBlock",
     "version": "1.0",
     "description": "Extension to block websites",
+    "icons": {
+        "16": "img/blockkitty.png",
+        "48": "img/pawshield-48.png",
+        "128": "img/pawshield-128.png"
+    },
     "permissions": [
         "declarativeNetRequest",
         "tabs",
@@ -17,9 +22,9 @@
     },
     "action": {
         "default_icon": {
-            "16": "pawshield-16.png",
-            "48": "pawshield-48.png",
-            "128": "pawshield-128.png"
+            "16": "img/pawshield-16.png",
+            "48": "img/pawshield-48.png",
+            "128": "img/pawshield-128.png"
         },
         "default_popup": "popup.html"
     },

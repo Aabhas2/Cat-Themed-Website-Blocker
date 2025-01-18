@@ -12,7 +12,7 @@ if (site) {
 const catImage = document.getElementById("cat-meme");
 
 //fallback image if API request fails
-const fallbackImg = "Kitty.jpeg"
+const fallbackImg = "img/Kitty.jpeg"
 
 //Fetch the API key securely from the api_key.txt file 
 fetch('/api_key.txt')
