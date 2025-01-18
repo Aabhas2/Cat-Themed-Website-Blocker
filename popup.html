@@ -1,29 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website-Blocker-Extension</title>
+    <title>MeowBlock</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
-    <h1>Website Blocker</h1>
-    <!-- <div class="navbar">
-        <button class="active" id="block-tab">Block</button>
-        <button id="timer-tab">Set Timer</button>
-    </div> -->
-    <div id="block-section" style="display: block;">
-        <input type="text" id="site-input" placeholder="Enter Website URL"/>
-        <button id="add-btn">Block Website</button>
-        
+    <div class="container">
+        <div class="logo-text">
+            <img src="pawshield-48.png" alt="pawshield-logo">
+            <h1>MEOWBLOCK</h1>
+        </div>
+
+        <div id="block-section">
+            <input type="text" id="site-input" placeholder="Enter Website URL" />
+            <button id="add-btn">Block Website</button>
+        </div>
+        <h2>Blocked Sites</h2>
+        <ul id="blocked-sites-list"></ul>
     </div>
-    <!-- <div id="timer-section" style="display: none;">
-        <input type="text" id="timer-site-input" placeholder="Enter Website URL"/>
-        <input type="number" id="timer-input" placeholder="Block for (minutes)"/>
-        <button id="timer-btn">Set Timer</button>
-    </div> -->
-    <h2>Blocked Sites</h2>
-    <ul id="blocked-sites-list"></ul>
     <script src="popup.js"></script>
 </body>
+
 </html>

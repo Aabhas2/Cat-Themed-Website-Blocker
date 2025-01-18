@@ -4,6 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <title>BE PRODUCTIVE!</title>
     <style>
         body {
@@ -13,26 +17,41 @@
             justify-content: center;
             height: 100vh;
             margin: 0;
-            background-color: #f8f9fa;
-            font-family: Arial, sans-serif;
+            background-color: #ffe6ee;
+            font-family: 'Sour Gummy', sans-serif;
             text-align: center;
         }
 
         img {
-            max-height: 100%;
-            max-width: 100%;
+            width: 500px;
+            height: 400px;
+            object-fit: cover;
+            border: 2px solid #ccc;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
             height: auto;
             border-radius: 10px;
             
         }
 
         h1 {
-            color: #333;          
+            color: #f06393;  
+            margin: 10px 0;        
+        }
+        h2{
+            color: #ff80ab;
+            margin: 5px 0 20px 0;
+        }
+        @media (max-width: 600px) {
+            img {
+                width: 300px;
+                height: 240px;
+            }
         }
     </style>
 </head>
 
 <body>
+
     <h1 id="blocked-site-message">What you doing here on </h1>
     <h2>Go back  to your work dude</h2>
     <img src="" id="cat-meme" alt="Loading a productivity cat....">
