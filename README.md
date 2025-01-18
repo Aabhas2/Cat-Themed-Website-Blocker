@@ -9,8 +9,8 @@ This chromium based extension helps you stay focused by blocking distracting web
 * **Easy to use:** Simple and intuitive interface for blocking websites.
 * **Cat-themed design:** Includes a custom cat paw shield icon and a playful "MEOWBLOCK" title.
 
-<img src="image2.png" alt="SS-1">
-<img src="image.png" alt="SS-2">
+<img src="img/image2.png" alt="SS-1" width = "400">
+<img src="img/image.png" alt="SS-2" width = "400">
 
 ## Development
 
