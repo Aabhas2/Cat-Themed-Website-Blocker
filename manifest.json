@@ -16,7 +16,11 @@
         "service_worker": "background.js"
     },
     "action": {
-        "default_icon": "icons8-blocker-64.png",
+        "default_icon": {
+            "16": "pawshield-16.png",
+            "48": "pawshield-48.png",
+            "128": "pawshield-128.png"
+        },
         "default_popup": "popup.html"
     },
     "content_security_policy": {
