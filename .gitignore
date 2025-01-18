@@ -1,11 +1,6 @@
 # Ignore API key file 
 api_key.txt 
 
-
-#Ignore image file
-image.png
-image1.png
-image2.png
 #Ignore temporary files 
 *.tmp
 
