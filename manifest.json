@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "MeowBlock",
     "version": "1.0",
-    "description": "Extension to block websites",
+    "description": "Cat themed website blocker, shows cute cat memes instead of the blocked websites.",
     "icons": {
         "16": "img/blockkitty.png",
         "48": "img/pawshield-48.png",
