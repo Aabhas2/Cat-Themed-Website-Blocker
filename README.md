@@ -1,6 +1,6 @@
 # MeowBlock Extension
 
-Published: https://meowblock.netlify.app/
+### Published: https://meowblock.netlify.app/
 This chromium based extension helps you stay focused by blocking distracting websites. It features a playful cat theme with a custom icon and a user-friendly interface.
 
 ## Features
